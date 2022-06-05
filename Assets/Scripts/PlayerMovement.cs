@@ -20,17 +20,27 @@ public class PlayerMovement : MonoBehaviour{
     public float MomentumRate = 0.5f;
 
     [Tooltip("This is how high the player will jump")]
-    public float JumpForce = 300;
+    public float JumpForce = 3000;
 
-    [Header("Rigidbody Variables")]
+    [Tooltip("This is the force that will shove the player back if you hold down, Keep positive!!!! Please!!!")]
+    public float HardDropForce = 300;
+
+    [Header("Rigidbody & Game Object Variables")]
+    [Tooltip("Rigidbody of the character")]
     public Rigidbody2D PlayerRigidbody;
 
-    public Collider2D GroundChecker;
+    [Tooltip("This is the standing player with it's collision")]
+    public GameObject StandingObject;
+
+    [Tooltip("This is the sliding player with it's collision")]
+    public GameObject SlidingObject;
 
     #endregion
 
     #region Private Variables
     
+    [Header("Private Variables, just visible for testing porpoises")]
+
     //[Tooltip("The Speed the player is going at")]
     [SerializeField]private float PlayerSpeed;
     
@@ -49,12 +59,24 @@ public class PlayerMovement : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
-        GainMomentum();
-        MoveRight();
-        JumpCheck();
+        HandleMovement();
     }
 
     #region Movement Functions
+
+    /**
+        Just for organization purposes, I think it looks nicer if I have this function rather than putting it all in update.
+        That's all
+        Sorry if you're on the github and seeing this, this is just how I code
+        It looks nicer.
+    **/
+    private void HandleMovement(){
+        GainMomentum();
+        MoveRight();
+        JumpCheck();
+        HardDrop();
+        SlidingManager();
+    }
 
     /**
         This moves the player right, infinitely, forever.
@@ -76,14 +98,19 @@ public class PlayerMovement : MonoBehaviour{
             PlayerRigidbody.AddForce(JumpVector);
             //Disables jump (you are in the air nyoom)
             CanJump = false;
+            //You are no longer on the ground, be free my child: Marks can slide to false
+            //The joke here is that the previous variable was "IsGrounded" but past Niko
+            //Decided to make a thing in advanced but here we are
+            CanSlide = false;
         }
     }
 
     //Resets the Jump
     void OnTriggerEnter2D(Collider2D CollidedObject){
-        //If you're touching the ground, reset the jump
+        //If you're touching the ground, reset the jump, marks as Can Slide to true
         if(CollidedObject.gameObject.CompareTag("Ground")){
             CanJump = true;
+            CanSlide = true;
         }
 
         //If you run into an object, play the object's particle system. Then kill it.
@@ -92,6 +119,32 @@ public class PlayerMovement : MonoBehaviour{
         }
     }
 
+    /**
+        This does a couple of things, it'll make sure that the player is sliding and also swap sprites if they are.
+        I guess it'd be better to put this into 2 different functions but whatever
+    **/
+    private void SlidingManager(){
+        //If the player is grounded and holding the slide button, then swap sprites
+        if(CanSlide && Input.GetButton("Slide")){
+            SlidingObject.SetActive(true);
+            StandingObject.SetActive(false);
+        } else if(Input.GetButtonUp("Slide") || !CanSlide) {
+            //If the player lets go of slide or is now in the air, then swap sprites.
+            SlidingObject.SetActive(false);
+            StandingObject.SetActive(true);
+        }
+    }
+
+    /**
+        If the player is in the air
+    **/
+    private void HardDrop(){
+        //Checks if the player is holding the slide button and is in the air by checking if it can slide
+        if(Input.GetButton("Slide") && !CanSlide){
+            Vector2 HardDropVector = new Vector2(0, -HardDropForce);
+            PlayerRigidbody.AddForce(HardDropVector);
+        }
+    }
 
 
     #endregion
