@@ -43,6 +43,9 @@ public class CameraController : MonoBehaviour{
 
     // Start is called before the first frame update
     void Start(){
+        //Adjusts the camera to the player's initial position
+        transform.position = TrackingTarget.position;
+
         //Gets the difference of the zooms
         ZoomDifference = Mathf.Abs(MaxCameraZoom - MinCameraZoom);
     }
@@ -62,7 +65,7 @@ public class CameraController : MonoBehaviour{
         float PlayerSpeedPercentage = PlayerObject.GetSpeedPercentage();
 
         //Creates a new Offset Vector
-        Vector3 OffsetVector = new Vector3(Offset.x + (2 * PlayerSpeedPercentage), Offset.y + (2 * PlayerSpeedPercentage), -10);
+        Vector3 OffsetVector = new Vector3(Offset.x + (2 * PlayerSpeedPercentage), Offset.y + (2 * PlayerSpeedPercentage), -69);
 
         //This gets ONLY the X of the target, so when the player jumps, the camera doesn't move either
         Vector3 TargetPosCorrected = new Vector3(TrackingTarget.position.x, 0, 0);
