@@ -44,8 +44,6 @@ public class ChunkSpawner : MonoBehaviour{
     void Start(){
         //Creates the offset of the spawnner
         OffsetVector = new Vector2(xOffsetOfSpawner, yOffsetOfSpawner);
-        Debug.Log("YOffset is: " + yOffsetOfSpawner);
-        Debug.Log("Y Offset is: " + OffsetVector.y);
 
         //Starts following the player immediately
         FollowPlayer();
@@ -103,5 +101,16 @@ public class ChunkSpawner : MonoBehaviour{
             XPosOfLastChunkPlaced = transform.position.x;
             XDistanceCounter = 0;
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D CollidedObject){
+        //If you're touching the ground, reset the jump
+        if(CollidedObject.gameObject.CompareTag("Chunk")){
+            Destroy(CollidedObject.gameObject);
+        }
+
+        Debug.Log("Vore");
+        Destroy(CollidedObject.gameObject);
+
     }
 }

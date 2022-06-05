@@ -15,29 +15,22 @@ public class ObstacleBehavior : MonoBehaviour{
 
     #region Private Variables
 
-    [SerializeField]private bool WasHit = false;
     [SerializeField]private float DeathTimer = 5f;
     #endregion
 
     // Start is called before the first frame update
     void Start(){
-        
     }
 
     void Update(){
-        if(WasHit)
-            DeathTimer -= Time.deltaTime;
-
-        if(DeathTimer < 0)
-            Destroy(this.gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D CollidedObject){
         //If you're touching the ground, reset the jump
         if(CollidedObject.gameObject.CompareTag("Player")){
             BoxSpawner.Play();
-            WasHit = true;
             ObjectSprite.SetActive(false);
+            Destroy(this.gameObject, DeathTimer);
             Debug.Log("There's some twink and he fucking ran into me");
         }
 
