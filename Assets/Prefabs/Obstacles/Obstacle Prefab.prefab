@@ -103,7 +103,6 @@ MonoBehaviour:
   BoxSpawner: {fileID: 2337061570607462738}
   ObstacleCollider: {fileID: 2337061570607462736}
   ObjectSprite: {fileID: 2337061571038755361}
-  WasHit: 0
   DeathTimer: 5
 --- !u!198 &2337061570607462738
 ParticleSystem:
@@ -119,7 +118,7 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
@@ -241,7 +240,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 8.19
+      scalar: 14.8
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -679,7 +678,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 4.6
+      scalar: 20
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -738,9 +737,9 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 0.3093197, y: -0.038662177, z: 0.000000049849792}
+    m_Position: {x: 0.1947649, y: 0.015304559, z: 0.00000004663269}
     m_Rotation: {x: 315.1112, y: 90, z: 0}
-    m_Scale: {x: 1, y: 1, z: 1}
+    m_Scale: {x: 0.60653013, y: 0.60653013, z: 0.60653025}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -819,7 +818,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.13649158
+      value: 0.7
       mode: 0
       spread: 0
       speed:
@@ -938,7 +937,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 59.54
+      scalar: 167.96
       minScalar: 10
       maxCurve:
         serializedVersion: 2

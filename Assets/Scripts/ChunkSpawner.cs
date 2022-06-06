@@ -95,8 +95,9 @@ public class ChunkSpawner : MonoBehaviour{
         XDistanceCounter = transform.position.x - XPosOfLastChunkPlaced;
         //If ChunkThiccness units have passed, then spawn a new chunk
         if(XDistanceCounter >= ChunkThiccness){
+            int RandomChunkNumber = Random.Range(0, ObstacleChunks.Length);
             //Spawn new chunk
-            Object.Instantiate(ObstacleChunks[0], transform.position, Rotato);
+            Object.Instantiate(ObstacleChunks[RandomChunkNumber], transform.position, Rotato);
             //Reset counter and update position
             XPosOfLastChunkPlaced = transform.position.x;
             XDistanceCounter = 0;
