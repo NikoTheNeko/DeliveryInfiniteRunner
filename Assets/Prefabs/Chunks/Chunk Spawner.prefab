@@ -103,7 +103,16 @@ MonoBehaviour:
   ChunkThiccness: 120
   PlayerObject: {fileID: 0}
   ObstacleChunks:
-  - {fileID: 4008477300598209259, guid: 61638b89e85c5a9419f06b357a9aba9a, type: 3}
+  - {fileID: 6501500697458948339, guid: b488b4d8b90d75b4da7143680030a876, type: 3}
+  - {fileID: 8094342464367702349, guid: 78c7274161d291b45a28ba2b6f8ff100, type: 3}
+  - {fileID: 5447672703237180929, guid: bf962c986b68e9d4faa78a640f29d3f0, type: 3}
+  - {fileID: 8375762046943517412, guid: 4627c3bf500bab14bbfc79c0a373a549, type: 3}
+  - {fileID: 8356867561413343176, guid: d8eb54fb00bd2a34ab2fc8188ad6d084, type: 3}
+  - {fileID: 60596278132079460, guid: eba1947ca332243498ff1f40b5a13eea, type: 3}
+  - {fileID: 8076339898848947061, guid: a1d79b2fbf17c7e428cfb097c305af39, type: 3}
+  - {fileID: 5505075903487661123, guid: 85e702285dd905449a1480eea7cf3d83, type: 3}
+  - {fileID: 5286755836672446685, guid: 35c8985ebb130cf41b267dda9c183448, type: 3}
+  - {fileID: 1849461918887021561, guid: d6fbb90c2ad1bf841881a6aa7dbeb841, type: 3}
 --- !u!50 &463109385
 Rigidbody2D:
   serializedVersion: 4

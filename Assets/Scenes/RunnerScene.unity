@@ -320,25 +320,5 @@ PrefabInstance:
       propertyPath: PlayerObject
       value: 
       objectReference: {fileID: 897619135}
-    - target: {fileID: 8285312746656116046, guid: 1024ffe9d108ca54ca8cc069ea5a08c6, type: 3}
-      propertyPath: ObstacleChunks.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8285312746656116046, guid: 1024ffe9d108ca54ca8cc069ea5a08c6, type: 3}
-      propertyPath: ObstacleChunks.Array.data[0]
-      value: 
-      objectReference: {fileID: 6501500697458948339, guid: b488b4d8b90d75b4da7143680030a876, type: 3}
-    - target: {fileID: 8285312746656116046, guid: 1024ffe9d108ca54ca8cc069ea5a08c6, type: 3}
-      propertyPath: ObstacleChunks.Array.data[1]
-      value: 
-      objectReference: {fileID: 8094342464367702349, guid: 78c7274161d291b45a28ba2b6f8ff100, type: 3}
-    - target: {fileID: 8285312746656116046, guid: 1024ffe9d108ca54ca8cc069ea5a08c6, type: 3}
-      propertyPath: ObstacleChunks.Array.data[2]
-      value: 
-      objectReference: {fileID: 5447672703237180929, guid: bf962c986b68e9d4faa78a640f29d3f0, type: 3}
-    - target: {fileID: 8285312746656116046, guid: 1024ffe9d108ca54ca8cc069ea5a08c6, type: 3}
-      propertyPath: ObstacleChunks.Array.data[3]
-      value: 
-      objectReference: {fileID: 8375762046943517412, guid: 4627c3bf500bab14bbfc79c0a373a549, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1024ffe9d108ca54ca8cc069ea5a08c6, type: 3}

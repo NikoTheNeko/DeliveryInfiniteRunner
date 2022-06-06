@@ -25,6 +25,10 @@ public class PlayerMovement : MonoBehaviour{
     [Tooltip("This is the force that will shove the player back if you hold down, Keep positive!!!! Please!!!")]
     public float HardDropForce = 300;
 
+    [Tooltip("When you get hit by something, you decrease by this amount")]
+    public float ObstacleSlowdown = 5;
+
+
     [Header("Rigidbody & Game Object Variables")]
     [Tooltip("Rigidbody of the character")]
     public Rigidbody2D PlayerRigidbody;
@@ -115,7 +119,7 @@ public class PlayerMovement : MonoBehaviour{
 
         //If you run into an object, play the object's particle system. Then kill it.
         if(CollidedObject.gameObject.CompareTag("Obstacle")){
-            DecreaseSpeed(10);
+            DecreaseSpeed(ObstacleSlowdown);
         }
     }
 

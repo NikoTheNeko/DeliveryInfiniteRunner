@@ -20,6 +20,9 @@ public class ObstacleBehavior : MonoBehaviour{
 
     // Start is called before the first frame update
     void Start(){
+        //Decouples the parent so that way it's no longer getting scaled incorrectly
+        transform.parent = null;
+
     }
 
     void Update(){
