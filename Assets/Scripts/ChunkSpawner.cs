@@ -109,7 +109,6 @@ public class ChunkSpawner : MonoBehaviour{
             Destroy(CollidedObject.gameObject);
         }
 
-        Debug.Log("Vore");
         Destroy(CollidedObject.gameObject);
 
     }
