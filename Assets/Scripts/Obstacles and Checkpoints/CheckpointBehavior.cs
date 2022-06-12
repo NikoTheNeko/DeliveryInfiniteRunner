@@ -6,6 +6,8 @@ public class CheckpointBehavior : MonoBehaviour{
 
     #region Public Variables
 
+    [Header("Score Manager")]
+    [Tooltip("This is the Score Manager, it wil be fetched when the object is created")]
     public ScoreManager ScoreManagerObject;
 
     #endregion

@@ -6,6 +6,8 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour{
 
     #region Public Variables
+    [Header("Game Objects")]
+    [Tooltip("The Text that will show the score")]
     public Text ScoreDisplay;
     #endregion
 
@@ -18,6 +20,7 @@ public class ScoreManager : MonoBehaviour{
 
     // Start is called before the first frame update
     void Start(){
+        DontDestroyOnLoad(this);
         UpdateScoreText(); 
     }
 
@@ -56,6 +59,14 @@ public class ScoreManager : MonoBehaviour{
             UpdateScoreText();
             CheckpointCounter = 0;
         }
+    }
+
+    #endregion
+
+    #region Getters
+    //Returns the score (deliveries made)
+    public int GetDeliveriesMade(){
+        return DeliveriesMade;
     }
 
     #endregion
