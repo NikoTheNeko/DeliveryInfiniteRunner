@@ -73,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4008477300598209259, guid: 61638b89e85c5a9419f06b357a9aba9a, type: 3}
       propertyPath: m_Name
-      value: Obstacle Chunk 4
+      value: Obstacle Chunk 4 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4157569413056408689, guid: 61638b89e85c5a9419f06b357a9aba9a, type: 3}
       propertyPath: m_IsActive
@@ -115,7 +115,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2337061570607462830, guid: fd750109469806242a61d1d45eb6f1b3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.109
+      value: -0.1521
       objectReference: {fileID: 0}
     - target: {fileID: 2337061570607462830, guid: fd750109469806242a61d1d45eb6f1b3, type: 3}
       propertyPath: m_LocalPosition.y
