@@ -46,7 +46,7 @@ public class TimerScript : MonoBehaviour{
     private void TimerChecks(){
         if(TimerTime > 0){
             CountDownTimer();
-            TimerText.text = "Time Left: " + FormatTime();
+            TimerText.text = "<b>" + Mathf.Round(TimerTime) + "s</b>";
         }
 
         if(TimerTime <= 0){
@@ -76,6 +76,14 @@ public class TimerScript : MonoBehaviour{
         return FormattedTime;
     }
 
+    #endregion
+
+    #region Public Functions
+
+    public void ResetTimer(){
+        TimerTime = MaxDeliveryTime;
+    }
+    
     #endregion
 
 }

@@ -123,6 +123,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &758177164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 758177166}
+  - component: {fileID: 758177165}
+  m_Layer: 0
+  m_Name: Score Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &758177165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758177164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3529e545edcfe03489f616c8c1eccfac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CheckpointCounter: 0
+  DeliveriesMade: 0
+--- !u!4 &758177166
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758177164}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &897619135 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1530000169114190925, guid: 949c1e3776cf34a4e8058c8f458a00b9, type: 3}
@@ -212,7 +257,7 @@ Transform:
   m_Children:
   - {fileID: 1347551597}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2069267901
 GameObject:
@@ -289,7 +334,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 242419875832498950, guid: 0fe005c6d976b164a96bf0a50f768657, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 242419875832498950, guid: 0fe005c6d976b164a96bf0a50f768657, type: 3}
       propertyPath: m_LocalPosition.x
@@ -352,13 +397,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1530000169114190898, guid: 949c1e3776cf34a4e8058c8f458a00b9, type: 3}
+      propertyPath: HardDropForce
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 1530000169114190921, guid: 949c1e3776cf34a4e8058c8f458a00b9, type: 3}
       propertyPath: m_Name
       value: Nate Delivery Boy
       objectReference: {fileID: 0}
     - target: {fileID: 1530000169114190925, guid: 949c1e3776cf34a4e8058c8f458a00b9, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1530000169114190925, guid: 949c1e3776cf34a4e8058c8f458a00b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -427,7 +476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2829711684506036507, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2829711684506036507, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
       propertyPath: m_AnchorMax.x
@@ -512,7 +561,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8285312746656116032, guid: 1024ffe9d108ca54ca8cc069ea5a08c6, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8285312746656116032, guid: 1024ffe9d108ca54ca8cc069ea5a08c6, type: 3}
       propertyPath: m_LocalPosition.x

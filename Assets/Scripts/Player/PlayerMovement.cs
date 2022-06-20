@@ -39,6 +39,8 @@ public class PlayerMovement : MonoBehaviour{
     [Tooltip("This is the sliding player with it's collision")]
     public GameObject SlidingObject;
 
+    
+
     #endregion
 
     #region Private Variables

@@ -91,10 +91,8 @@ public class ChunkSpawner : MonoBehaviour{
         
         //Spawns the first chunk and the next
         Object.Instantiate(EmptyChunks[0], FirstChunkPos, Rotato);
-        //Debug.Log("First Chunk spawned at: " + FirstChunkPos.x + ", " + FirstChunkPos.y);
 
         Object.Instantiate(ObstacleChunks[0], transform.position, Rotato);
-        //Debug.Log("Second Chunk spawned at: " + transform.position.x + ", " + transform.position.y);
 
         //Sets the first X pos
         XPosOfLastChunkPlaced = transform.position.x;
@@ -135,7 +133,6 @@ public class ChunkSpawner : MonoBehaviour{
         a random chunk in the array after a certain distance has been passed.
     **/
     private void SpawnChunks(){
-        Debug.Log("Chunk Counter is at: " + ChunkCounter);
         //Gets the distance traveled fromt he last chunk spawned
         XDistanceCounter = transform.position.x - XPosOfLastChunkPlaced;
         //If ChunkThiccness units have passed, then spawn a new chunk

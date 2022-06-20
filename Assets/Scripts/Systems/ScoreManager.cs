@@ -8,19 +8,40 @@ public class ScoreManager : MonoBehaviour{
     #region Public Variables
     [Header("Game Objects")]
     [Tooltip("The Text that will show the score")]
-    public Text ScoreDisplay;
+    [SerializeField] public static Text ScoreDisplay;
+
+    [Tooltip("The timer used to keep track of time")]
+    [SerializeField] public static TimerScript TimerObject;
+
+    [Tooltip("Holds the instance of a Score Manager to prevent duplicates")]
+    [SerializeField] public static ScoreManager instance;
     #endregion
 
     #region Private Variables
+    [Tooltip("Checks how many checkpoints a player has encountered, 2 for pick up 4 for delivery")]
     [SerializeField] private int CheckpointCounter = 0;
 
+    [Tooltip("A player's score")]
     [SerializeField] private int DeliveriesMade = 0;
 
     #endregion
 
+    void Awake(){
+        if(instance == null){
+            //If not preserve itself
+            //Sets this so this doesn't get destroyed on load
+            instance = this;
+            DontDestroyOnLoad(this);
+        } else if (instance != this){
+            //If the object already exists, then just delete itself
+            Destroy(gameObject);
+        }
+    }
+
     // Start is called before the first frame update
     void Start(){
-        DontDestroyOnLoad(this);
+        ScoreDisplay = GameObject.Find("Score Text").GetComponent<Text>();
+        TimerObject = GameObject.Find("Timer").GetComponent<TimerScript>();
         UpdateScoreText(); 
     }
 
@@ -54,10 +75,12 @@ public class ScoreManager : MonoBehaviour{
 
         //If the Checkpoint Counter is equal to 2,
         //A succesful delivery has been made, increment deliveries made
+        //Also resets the timer
         if(CheckpointCounter == 4){
             DeliveriesMade++;
             UpdateScoreText();
             CheckpointCounter = 0;
+            TimerObject.ResetTimer();
         }
     }
 
