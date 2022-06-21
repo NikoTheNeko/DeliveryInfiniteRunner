@@ -11,7 +11,7 @@ public class ScoreManager : MonoBehaviour{
     [SerializeField] public static Text ScoreDisplay;
 
     [Tooltip("The timer used to keep track of time")]
-    [SerializeField] public static TimerScript TimerObject;
+    [SerializeField] public TimerScript TimerObject;
 
     [Tooltip("Holds the instance of a Score Manager to prevent duplicates")]
     [SerializeField] public static ScoreManager instance;
@@ -83,6 +83,7 @@ public class ScoreManager : MonoBehaviour{
             TimerObject.ResetTimer();
         }
     }
+
 
     #endregion
 

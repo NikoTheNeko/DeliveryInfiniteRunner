@@ -17,6 +17,8 @@ public class TimerScript : MonoBehaviour{
     [Tooltip("The scene changer object to swap scenes to game over")]
     public SceneButtonChanger SceneSwapper;
 
+    public Image TimerRingSprite = null;
+
     #endregion
 
     #region Private Variables
@@ -35,6 +37,7 @@ public class TimerScript : MonoBehaviour{
     // Update is called once per frame
     void Update(){
         TimerChecks();
+        UpdateUIRing();
     }
 
     #region Timer Functions
@@ -74,6 +77,14 @@ public class TimerScript : MonoBehaviour{
 
         //Returns corrected format
         return FormattedTime;
+    }
+
+    #endregion
+
+    #region UI Functions
+
+    private void UpdateUIRing(){
+        TimerRingSprite.fillAmount = TimerTime / MaxDeliveryTime;
     }
 
     #endregion

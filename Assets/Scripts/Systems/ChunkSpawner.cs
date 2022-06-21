@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChunkSpawner : MonoBehaviour{
 
@@ -37,6 +38,10 @@ public class ChunkSpawner : MonoBehaviour{
     [Tooltip("This is the player's position. You only want the X.")]
     public Transform PlayerObject;
 
+    [Header("UI Objects")]
+    [Tooltip("This is the progrses bar slider")]
+    public Slider ProgressBarSlider;
+
     [Header("Chunk Arrays")]
     [Tooltip("Obstacle Chunks have chunks that contain obstacles")]
     public GameObject[] ObstacleChunks;
@@ -51,6 +56,7 @@ public class ChunkSpawner : MonoBehaviour{
     [Tooltip("Delivery Chunks, has people you deliver food to")]
 
     public GameObject[] DeliveryChunks;
+
 
     #endregion
 
@@ -104,6 +110,7 @@ public class ChunkSpawner : MonoBehaviour{
     void Update(){
         FollowPlayer();
         SpawnChunks();
+        UpdateProgressBar();
     }
 
     #region Placement Functions
@@ -183,6 +190,7 @@ public class ChunkSpawner : MonoBehaviour{
     #endregion
 
     #region Rigidbody Functions
+
     /**
         Chunk Deleter fuck those chunks
     **/
@@ -197,4 +205,51 @@ public class ChunkSpawner : MonoBehaviour{
 
     }
     #endregion
+
+    #region UI Functions
+
+    private void UpdateProgressBar(){
+        //Creates a new variable, this is the "corrected" number to handle special cases (ie if the chunk counter is 0)
+        int ChunkProgressNumber = ChunkCounter;
+        //If the chunk is less than 2, be a filled bar
+        if(ChunkProgressNumber < 2){
+            ChunkProgressNumber = DropOffPhase + 2;
+        }
+
+        //Decrements the chunk spawner by 2 (This is the current chuk the player is spawned at, you spawn 2 chunks ahead)
+        ChunkProgressNumber -= 2;
+
+        //Creates the target variable
+        float ProgressBarPercentageTarget = 0f;
+
+        //Gets the target (what percentage it should be at)
+         if (ChunkProgressNumber <= DropOffPhase && ChunkProgressNumber > RestaurantPhase){
+
+            //Gets the progress between the current chunks PAST Restaurant phase and between DropOff PHase
+            ProgressBarPercentageTarget = ((float)ChunkProgressNumber - RestaurantPhase) / ((float)DropOffPhase - RestaurantPhase);
+
+            //Gets the percentage and adds it ontop of 50%
+            ProgressBarPercentageTarget = 0.5f + (ProgressBarPercentageTarget * 0.5f);
+
+
+        } else if(ChunkProgressNumber <= RestaurantPhase){
+
+            //Gets the progress between the current chunks and the restaurant phase
+            ProgressBarPercentageTarget = (float)ChunkProgressNumber / (float)RestaurantPhase;
+            //Gets the percentage of 50%
+            ProgressBarPercentageTarget *= 0.5f;
+
+        }
+
+        Debug.Log("Chunk Number: " + ChunkProgressNumber);
+
+        float NewProgressBarValue = Mathf.Lerp(ProgressBarSlider.value, ProgressBarPercentageTarget, 0.01f);
+
+        ProgressBarSlider.value = NewProgressBarValue;
+        
+          
+    }
+
+    #endregion
+
 }

@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3529e545edcfe03489f616c8c1eccfac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimerObject: {fileID: 0}
   CheckpointCounter: 0
   DeliveriesMade: 0
 --- !u!4 &758177166
@@ -182,6 +183,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 207d9623ec1d19d409dfa54c276d24d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1164720362 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1164720362, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+  m_PrefabInstance: {fileID: 2829711684280830888}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1347551596
@@ -399,7 +411,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1530000169114190898, guid: 949c1e3776cf34a4e8058c8f458a00b9, type: 3}
       propertyPath: HardDropForce
-      value: 200
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 1530000169114190921, guid: 949c1e3776cf34a4e8058c8f458a00b9, type: 3}
       propertyPath: m_Name
@@ -458,10 +470,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 396704212, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.18396546
+      objectReference: {fileID: 0}
+    - target: {fileID: 396704212, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.18396546
+      objectReference: {fileID: 0}
+    - target: {fileID: 396704212, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.18396546
+      objectReference: {fileID: 0}
+    - target: {fileID: 396704213, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 396704215, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
       propertyPath: SceneSwapper
       value: 
       objectReference: {fileID: 1347551598}
+    - target: {fileID: 668823626, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 668823626, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2829711684506036487, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
       propertyPath: m_Name
       value: UI Canvas
@@ -550,6 +586,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4106640324808602617, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 272
+      objectReference: {fileID: 0}
+    - target: {fileID: 8786493279251763776, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
 --- !u!1001 &8285312746815115336
@@ -623,6 +667,10 @@ PrefabInstance:
       propertyPath: RestaurantPhase
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 8285312746656116046, guid: 1024ffe9d108ca54ca8cc069ea5a08c6, type: 3}
+      propertyPath: ProgressBarSlider
+      value: 
+      objectReference: {fileID: 1164720362}
     - target: {fileID: 8285312746656116046, guid: 1024ffe9d108ca54ca8cc069ea5a08c6, type: 3}
       propertyPath: EmptyChunks.Array.size
       value: 1

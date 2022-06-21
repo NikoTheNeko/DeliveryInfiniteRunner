@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &272601855
 RectTransform:
   m_ObjectHideFlags: 0
@@ -103,15 +103,15 @@ RectTransform:
   m_GameObject: {fileID: 396704211}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.21145456, y: 0.21145456, z: 0.21145456}
   m_Children: []
   m_Father: {fileID: 4106640324808602617}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00000047683716, y: -0.0000009536743}
-  m_SizeDelta: {x: 71.6097, y: 51.2423}
+  m_AnchoredPosition: {x: 0.000002861023, y: -0.0000061020255}
+  m_SizeDelta: {x: 417.2657, y: 298.5859}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &396704215
 MonoBehaviour:
@@ -128,6 +128,7 @@ MonoBehaviour:
   MaxDeliveryTime: 90
   TimerText: {fileID: 396704213}
   SceneSwapper: {fileID: 0}
+  TimerRingSprite: {fileID: 5305500563699785025}
   TimerTime: 0
 --- !u!222 &396704214
 CanvasRenderer:
@@ -264,7 +265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &690167574
 RectTransform:
   m_ObjectHideFlags: 0
@@ -331,6 +332,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1164720361}
+  - component: {fileID: 5607620996973632360}
   - component: {fileID: 1164720364}
   - component: {fileID: 1164720363}
   - component: {fileID: 1164720362}
@@ -364,6 +366,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -102}
   m_SizeDelta: {x: 8000, y: 691}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5607620996973632360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164720360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7271e4371a0bc294c8a75641ef335e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RestaurantPhaseButton: {fileID: 690167573}
+  DropOffButton: {fileID: 272601854}
+  ProgressBarSlider: {fileID: 1164720362}
 --- !u!222 &1164720364
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -449,7 +466,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
