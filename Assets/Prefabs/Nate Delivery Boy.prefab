@@ -105,6 +105,7 @@ MonoBehaviour:
   MomentumRate: 0.5
   JumpForce: 3000
   HardDropForce: 150
+  ObstacleSlowdown: 5
   PlayerRigidbody: {fileID: 1530000169114190926}
   StandingObject: {fileID: 1530000170522536549}
   SlidingObject: {fileID: 1530000169897101793}

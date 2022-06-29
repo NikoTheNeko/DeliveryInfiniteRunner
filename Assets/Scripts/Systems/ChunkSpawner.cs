@@ -42,6 +42,9 @@ public class ChunkSpawner : MonoBehaviour{
     [Tooltip("This is the progrses bar slider")]
     public Slider ProgressBarSlider;
 
+    [Tooltip("This handles all the notifications")]
+    public NotificationUIHandler NotifHandler;
+
     [Header("Chunk Arrays")]
     [Tooltip("Obstacle Chunks have chunks that contain obstacles")]
     public GameObject[] ObstacleChunks;
@@ -74,6 +77,13 @@ public class ChunkSpawner : MonoBehaviour{
     //The offset vector for the spawner
     Vector2 OffsetVector;
 
+    //This is the character that will be the one who gets delivered too
+    /** Current List, will get bigger
+        0 - Jae
+        1 - ShimamoKaze
+    **/
+    private int CharacterSelector = 0;
+
     /**
         This is gonna be a little bit tricky but bear with me
         So, this is the amount of chunks that have been spawned
@@ -102,6 +112,9 @@ public class ChunkSpawner : MonoBehaviour{
 
         //Sets the first X pos
         XPosOfLastChunkPlaced = transform.position.x;
+
+        CharacterSelector = Random.Range(0, DeliveryChunks.Length);
+        NotifHandler.ShowCustomerNotif(CharacterSelector);
 
         
     }
@@ -150,15 +163,17 @@ public class ChunkSpawner : MonoBehaviour{
             //Reset Phase back to 0
             if(ChunkCounter > DropOffPhase){
                 ChunkCounter = 0;
+                CharacterSelector = Random.Range(0, DeliveryChunks.Length);
+                NotifHandler.ShowCustomerNotif(CharacterSelector);
             //Fifth Phase, Drop Off (Completes a whole cycle, player gets a point)
             } else if (ChunkCounter == DropOffPhase){
-                SpawnSpecificChunk(DeliveryChunks);
+                SpawnSpecificChunk(DeliveryChunks, CharacterSelector);
             //Fourth Phase, Delivery Phase (Repeat of Pick Up Phase, Obstacles before drop off)
             } else if (ChunkCounter > RestaurantPhase && ChunkCounter < DropOffPhase){
                 SpawnSpecificChunk(ObstacleChunks);
             //Third Phase, Restaurant Phase (Spawns Restaurant to pick up food)
             } if(ChunkCounter == RestaurantPhase){
-                SpawnSpecificChunk(RestaurantChunks);
+                SpawnSpecificChunk(RestaurantChunks, CharacterSelector);
             //Second Phase, Pick Up phase (obstacles before pick up)
             } if (ChunkCounter > EmptyPhase && ChunkCounter < RestaurantPhase){
                 SpawnSpecificChunk(ObstacleChunks);
@@ -178,6 +193,21 @@ public class ChunkSpawner : MonoBehaviour{
         int RandomChunkNumber = Random.Range(0, ChunksArray.Length);
         //Spawn new chunk
         Object.Instantiate(ChunksArray[RandomChunkNumber], transform.position, Rotato);
+        
+        //Increments a chunk
+        ChunkCounter++;
+
+        //Reset counter and update position
+        XPosOfLastChunkPlaced = transform.position.x;
+        XDistanceCounter = 0;
+    }
+
+    /**
+        Spawns a random chunk of a certain array, at a specific index
+    **/
+    private void SpawnSpecificChunk(GameObject[] ChunksArray, int CharacterIndex){
+        //Spawn new chunk
+        Object.Instantiate(ChunksArray[CharacterIndex], transform.position, Rotato);
         
         //Increments a chunk
         ChunkCounter++;
@@ -241,13 +271,12 @@ public class ChunkSpawner : MonoBehaviour{
 
         }
 
-        Debug.Log("Chunk Number: " + ChunkProgressNumber);
-
         float NewProgressBarValue = Mathf.Lerp(ProgressBarSlider.value, ProgressBarPercentageTarget, 0.01f);
 
         ProgressBarSlider.value = NewProgressBarValue;
-        
-          
+
+
+
     }
 
     #endregion

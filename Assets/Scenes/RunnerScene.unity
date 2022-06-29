@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!224 &153287565 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 153287565, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+  m_PrefabInstance: {fileID: 2829711684280830888}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &758177164
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,6 +201,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &1214921097 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2829711684506036507, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+  m_PrefabInstance: {fileID: 2829711684280830888}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1347551596
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,6 +281,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1694328384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1694328385}
+  m_Layer: 5
+  m_Name: Phone Spawner Location
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1694328385
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694328384}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1214921097}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 746, y: -595}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1957676069 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1957676069, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+  m_PrefabInstance: {fileID: 2829711684280830888}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12039654eb88085448964285a3d3309b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2069267901
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,34 +526,82 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 396704212, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.18396546
+    - target: {fileID: 153287565, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 396704212, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.18396546
+    - target: {fileID: 153287565, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 396704212, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.18396546
-      objectReference: {fileID: 0}
-    - target: {fileID: 396704213, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
-      propertyPath: m_FontData.m_MaxSize
-      value: 300
+    - target: {fileID: 153287565, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -9
       objectReference: {fileID: 0}
     - target: {fileID: 396704215, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
       propertyPath: SceneSwapper
       value: 
       objectReference: {fileID: 1347551598}
     - target: {fileID: 668823626, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 668823626, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 690167573, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690167575, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690167575, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 690167575, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+      propertyPath: m_FillOrigin
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957676069, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+      propertyPath: UICanvas
+      value: 
+      objectReference: {fileID: 1214921097}
+    - target: {fileID: 1957676069, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+      propertyPath: DeliveredNotif
+      value: 
+      objectReference: {fileID: 3625256229293782706, guid: 637d1562600d94645b03c5fe6d804aa5, type: 3}
+    - target: {fileID: 1957676069, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+      propertyPath: RestaurantNotif
+      value: 
+      objectReference: {fileID: 1610333532846405836, guid: 4cda24c5d6d546f47b5b7d5ab163decf, type: 3}
+    - target: {fileID: 1957676069, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+      propertyPath: NotifSpawnPosition
+      value: 
+      objectReference: {fileID: 153287565}
+    - target: {fileID: 1957676069, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+      propertyPath: PhoneSpawnPosition
+      value: 
+      objectReference: {fileID: 1694328385}
+    - target: {fileID: 1957676069, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+      propertyPath: PhoneUI.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957676069, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+      propertyPath: PhoneUI.Array.data[0]
+      value: 
+      objectReference: {fileID: 1200398617022842953, guid: 74cd5f8074f61334786a0ba976e743a7, type: 3}
+    - target: {fileID: 1957676069, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+      propertyPath: PhoneUI.Array.data[1]
+      value: 
+      objectReference: {fileID: 4972633184352103722, guid: 7e291133ec7aeb24ea391f4b022cbd0c, type: 3}
+    - target: {fileID: 1957676069, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+      propertyPath: PhoneUI.Array.data[2]
+      value: 
+      objectReference: {fileID: 3745458981127808182, guid: ea46edf1a52f40d41bb314644ed50dd9, type: 3}
+    - target: {fileID: 1957676069, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+      propertyPath: PhoneUI.Array.data[3]
+      value: 
+      objectReference: {fileID: 1200398617022842953, guid: 74cd5f8074f61334786a0ba976e743a7, type: 3}
     - target: {fileID: 2829711684506036487, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
       propertyPath: m_Name
       value: UI Canvas
@@ -586,14 +690,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4106640324808602617, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 272
-      objectReference: {fileID: 0}
-    - target: {fileID: 8786493279251763776, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 5607620996973632360, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
+      propertyPath: NotifHandler
+      value: 
+      objectReference: {fileID: 1957676069}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5eed64b3fabd40c4da9c9eb6a624113c, type: 3}
 --- !u!1001 &8285312746815115336
@@ -660,6 +760,10 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8285312746656116046, guid: 1024ffe9d108ca54ca8cc069ea5a08c6, type: 3}
+      propertyPath: NotifHandler
+      value: 
+      objectReference: {fileID: 1957676069}
+    - target: {fileID: 8285312746656116046, guid: 1024ffe9d108ca54ca8cc069ea5a08c6, type: 3}
       propertyPath: PlayerObject
       value: 
       objectReference: {fileID: 897619135}
@@ -677,7 +781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8285312746656116046, guid: 1024ffe9d108ca54ca8cc069ea5a08c6, type: 3}
       propertyPath: DeliveryChunks.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8285312746656116046, guid: 1024ffe9d108ca54ca8cc069ea5a08c6, type: 3}
       propertyPath: EmptyChunks.Array.data[0]
@@ -685,15 +789,31 @@ PrefabInstance:
       objectReference: {fileID: 5938324695900442430, guid: ce4abe5b9d5b7a64dbcf503194b1c7ca, type: 3}
     - target: {fileID: 8285312746656116046, guid: 1024ffe9d108ca54ca8cc069ea5a08c6, type: 3}
       propertyPath: RestaurantChunks.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8285312746656116046, guid: 1024ffe9d108ca54ca8cc069ea5a08c6, type: 3}
       propertyPath: DeliveryChunks.Array.data[0]
       value: 
-      objectReference: {fileID: 1718199977926152827, guid: 9674942ea127bd8409e850fd1f9fe9f3, type: 3}
+      objectReference: {fileID: 9164676362070109502, guid: 827c3886fb35eca41821645f96557bac, type: 3}
+    - target: {fileID: 8285312746656116046, guid: 1024ffe9d108ca54ca8cc069ea5a08c6, type: 3}
+      propertyPath: DeliveryChunks.Array.data[1]
+      value: 
+      objectReference: {fileID: 3704584707638286410, guid: 22a1f839a7fc1e046a88ee3b98bba02b, type: 3}
+    - target: {fileID: 8285312746656116046, guid: 1024ffe9d108ca54ca8cc069ea5a08c6, type: 3}
+      propertyPath: DeliveryChunks.Array.data[2]
+      value: 
+      objectReference: {fileID: 4890361511993995727, guid: 88559979ebb78c745b73f517c221e9cc, type: 3}
     - target: {fileID: 8285312746656116046, guid: 1024ffe9d108ca54ca8cc069ea5a08c6, type: 3}
       propertyPath: RestaurantChunks.Array.data[0]
       value: 
-      objectReference: {fileID: 1718199977926152827, guid: 9674942ea127bd8409e850fd1f9fe9f3, type: 3}
+      objectReference: {fileID: 6880411644754844863, guid: 53bac10e871c2644cbb8a4b8c5b8b599, type: 3}
+    - target: {fileID: 8285312746656116046, guid: 1024ffe9d108ca54ca8cc069ea5a08c6, type: 3}
+      propertyPath: RestaurantChunks.Array.data[1]
+      value: 
+      objectReference: {fileID: 7407585903968678115, guid: 225b72a5f9c383b4ea87f9e90dd23a57, type: 3}
+    - target: {fileID: 8285312746656116046, guid: 1024ffe9d108ca54ca8cc069ea5a08c6, type: 3}
+      propertyPath: RestaurantChunks.Array.data[2]
+      value: 
+      objectReference: {fileID: 413485362915333611, guid: 462c3808bf9ad9849ac0ce531bb9e1f1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1024ffe9d108ca54ca8cc069ea5a08c6, type: 3}
