@@ -76,7 +76,7 @@ public class ScoreManager : MonoBehaviour{
         //If the Checkpoint Counter is equal to 2,
         //A succesful delivery has been made, increment deliveries made
         //Also resets the timer
-        if(CheckpointCounter == 4){
+        if(CheckpointCounter == 2){
             DeliveriesMade++;
             UpdateScoreText();
             CheckpointCounter = 0;

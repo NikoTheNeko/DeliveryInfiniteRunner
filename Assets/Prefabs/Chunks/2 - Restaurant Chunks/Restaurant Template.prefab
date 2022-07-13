@@ -257,6 +257,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Checkpoint Box
       objectReference: {fileID: 0}
+    - target: {fileID: 5252753041955477848, guid: ef24aa5e9c5f98243b615234cb10d724, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5252753041955477854, guid: ef24aa5e9c5f98243b615234cb10d724, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -267,7 +271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5252753041955477854, guid: ef24aa5e9c5f98243b615234cb10d724, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.16188407
+      value: -0.246
       objectReference: {fileID: 0}
     - target: {fileID: 5252753041955477854, guid: ef24aa5e9c5f98243b615234cb10d724, type: 3}
       propertyPath: m_LocalPosition.z

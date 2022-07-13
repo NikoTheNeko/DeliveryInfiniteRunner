@@ -135,7 +135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1718199977926152827, guid: f6b0c077e61b88048bfd7a06825cde96, type: 3}
       propertyPath: m_Name
-      value: Restaurant Template Shimamo
+      value: Restaurant Template Shimamo Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6b0c077e61b88048bfd7a06825cde96, type: 3}

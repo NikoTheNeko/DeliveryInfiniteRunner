@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d4e18fbd1582dad439e9294c2b19aaf3, type: 3}
   m_Color: {r: 0.9528302, g: 0.29214135, b: 0.29214135, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -737,9 +737,9 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 0.1947649, y: 0.015304559, z: 0.00000004663269}
-    m_Rotation: {x: 315.1112, y: 90, z: 0}
-    m_Scale: {x: 0.60653013, y: 0.60653013, z: 0.60653025}
+    m_Position: {x: 0.19476451, y: 0.0153045785, z: 0.00000004663269}
+    m_Rotation: {x: 324.18872, y: 133.58704, z: 330.88452}
+    m_Scale: {x: 0.60653, y: 0.60653, z: 0.60653025}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -4830,7 +4830,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8a57f53145a64ac45be82bd36b25622c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4852,7 +4852,7 @@ ParticleSystemRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_RenderMode: 0
-  m_SortMode: 0
+  m_SortMode: 4
   m_MinParticleSize: 0
   m_MaxParticleSize: 0.5
   m_CameraVelocityScale: 0
@@ -4893,7 +4893,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 40.16208, y: 39.26}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4949,7 +4949,7 @@ Transform:
   m_GameObject: {fileID: 2337061571038755361}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.025740223, y: 0.025740223, z: 0.025740223}
   m_Children: []
   m_Father: {fileID: 2337061570607462830}
   m_RootOrder: 0
@@ -4994,8 +4994,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.9528302, g: 0.29214135, b: 0.29214135, a: 1}
+  m_Sprite: {fileID: 21300000, guid: c4a501b537207584ab2a5d63f55b5882, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

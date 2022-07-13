@@ -82,7 +82,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6106503028425484237, guid: 45b4e01258ea06842b58536a0d4ae0df, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.041592356
+      value: 0.029634552
       objectReference: {fileID: 0}
     - target: {fileID: 6106503028425484237, guid: 45b4e01258ea06842b58536a0d4ae0df, type: 3}
       propertyPath: m_LocalScale.y
@@ -145,6 +145,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1294422490834800831, guid: 61638b89e85c5a9419f06b357a9aba9a, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4008477300598209257, guid: 61638b89e85c5a9419f06b357a9aba9a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -195,7 +199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4008477300598209259, guid: 61638b89e85c5a9419f06b357a9aba9a, type: 3}
       propertyPath: m_Name
-      value: Obstacle Chunk 9
+      value: Obstacle Chunk 9 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4157569413056408689, guid: 61638b89e85c5a9419f06b357a9aba9a, type: 3}
       propertyPath: m_IsActive
