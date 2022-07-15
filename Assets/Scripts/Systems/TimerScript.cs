@@ -17,7 +17,17 @@ public class TimerScript : MonoBehaviour{
     [Tooltip("The scene changer object to swap scenes to game over")]
     public SceneButtonChanger SceneSwapper;
 
+    [Tooltip("This is the ring of the sprite that moves")]
     public Image TimerRingSprite = null;
+
+    [Tooltip("This is the game over screen")]
+    public GameObject GameOverSprite;
+
+    [Tooltip("This gives a buffer time before it swaps scenes")]
+    public float GameOverTimer = 5f;
+
+    [Tooltip("This is the player")]
+    public PlayerMovement Gamer;
 
     #endregion
 
@@ -53,7 +63,13 @@ public class TimerScript : MonoBehaviour{
         }
 
         if(TimerTime <= 0){
-            SceneSwapper.SceneSwitch();
+            Gamer.StopTheGame();
+            GameOverSprite.SetActive(true);
+            if(GameOverTimer > 0)
+                GameOverTimer -= Time.deltaTime;
+
+            if(GameOverTimer <= 0)
+                SceneSwapper.SceneSwitch();
         }
     }
 

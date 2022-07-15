@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour{
 
     #region Public Variables
     [Header("Game Objects")]
     [Tooltip("The Text that will show the score")]
-    [SerializeField] public static Text ScoreDisplay;
+    [SerializeField] public Text ScoreDisplay;
 
     [Tooltip("The timer used to keep track of time")]
     [SerializeField] public TimerScript TimerObject;
@@ -47,6 +48,11 @@ public class ScoreManager : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
+        //If the current scene is the runner Scene and also the objects are empty, then GET THEM.
+        if(ScoreDisplay == null && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("RunnerScene"))
+            ScoreDisplay = GameObject.Find("Score Text").GetComponent<Text>();
+        if(TimerObject == null && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("RunnerScene"))
+            TimerObject = GameObject.Find("Timer").GetComponent<TimerScript>();
         
     }
 
@@ -56,7 +62,7 @@ public class ScoreManager : MonoBehaviour{
         This is a very simple function, it just updates the score text
     **/
     private void UpdateScoreText(){
-        ScoreDisplay.text = "Deliveries: " + DeliveriesMade;
+        ScoreDisplay.text = DeliveriesMade.ToString();
     }
 
     #endregion

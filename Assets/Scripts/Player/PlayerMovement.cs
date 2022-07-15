@@ -28,6 +28,9 @@ public class PlayerMovement : MonoBehaviour{
     [Tooltip("When you get hit by something, you decrease by this amount")]
     public float ObstacleSlowdown = 5;
 
+    [Tooltip("Halts the player so we can end the game")]
+    public bool StopPlayer = false;
+
 
     [Header("Rigidbody & Game Object Variables")]
     [Tooltip("Rigidbody of the character")]
@@ -39,6 +42,13 @@ public class PlayerMovement : MonoBehaviour{
     [Tooltip("This is the sliding player with it's collision")]
     public GameObject SlidingObject;
 
+    [Header("Audio Objects")]
+
+    [Tooltip("This is the noise that will play if the player runs into a box")]
+    public AudioSource BoxStumble;
+
+    [Tooltip("Boingyoingyoing")]
+    public AudioSource JumpSFX;
     
 
     #endregion
@@ -65,7 +75,9 @@ public class PlayerMovement : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
-        HandleMovement();
+        if(!StopPlayer){
+            HandleMovement();
+        }
     }
 
     #region Movement Functions
@@ -108,6 +120,8 @@ public class PlayerMovement : MonoBehaviour{
             //The joke here is that the previous variable was "IsGrounded" but past Niko
             //Decided to make a thing in advanced but here we are
             CanSlide = false;
+            //Plays the jump noice
+            JumpSFX.Play();
         }
     }
 
@@ -199,6 +213,16 @@ public class PlayerMovement : MonoBehaviour{
             //Subtracts the speed
             PlayerSpeed -= SpeedLoss;
         }
+        //Plays the you ran into something noise
+        BoxStumble.Play();
+    }
+
+    /**
+        Call this to stop the player
+    **/
+    public void StopTheGame(){
+        StopPlayer = true;
+        PlayerSpeed = 0;
     }
 
 
