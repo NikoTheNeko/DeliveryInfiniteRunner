@@ -77,17 +77,17 @@ public class ScoreManager : MonoBehaviour{
     **/
     public void AddCheckpoint(){
         //Increments the Checkpoint counter
-        CheckpointCounter++;
+        //CheckpointCounter++;
 
         //If the Checkpoint Counter is equal to 2,
         //A succesful delivery has been made, increment deliveries made
         //Also resets the timer
-        if(CheckpointCounter == 2){
+        //if(CheckpointCounter == 2){
             DeliveriesMade++;
             UpdateScoreText();
-            CheckpointCounter = 0;
+        //    CheckpointCounter = 0;
             TimerObject.ResetTimer();
-        }
+        //}
     }
 
 
