@@ -572,6 +572,7 @@ MonoBehaviour:
   JumpForce: 3000
   HardDropForce: 150
   ObstacleSlowdown: 10
+  StopPlayer: 0
   PlayerRigidbody: {fileID: 1530000169114190926}
   StandingObject: {fileID: 1530000170522536549}
   SlidingObject: {fileID: 1530000169897101793}
@@ -580,6 +581,8 @@ MonoBehaviour:
   PlayerSpeed: 0
   CanJump: 1
   CanSlide: 1
+  Grounded: 1
+  MobileHardDropBool: 0
 --- !u!50 &1530000169114190926
 Rigidbody2D:
   serializedVersion: 4
@@ -614,7 +617,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.43446922, y: -4.8460727}
+  m_Offset: {x: 0.35977972, y: -4.870816}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -625,7 +628,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.9341354, y: 0.15779781}
+  m_Size: {x: 1.2060201, y: 0.2072854}
   m_EdgeRadius: 0
 --- !u!1 &1530000169897101793
 GameObject:
@@ -724,7 +727,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.43861985, y: -0.28724003}
+  m_Offset: {x: -0.32, y: -0.28724003}
   m_Size: {x: 3.8728557, y: 9.16}
   m_Direction: 0
 --- !u!1 &1530000170522536549
@@ -745,7 +748,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1530000170522536554
 Transform:
   m_ObjectHideFlags: 0

@@ -54,16 +54,19 @@ public class HighScoreManager : MonoBehaviour{
         if(ScoreManagerObject == null && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("GameOver Scene"))
             ScoreManagerObject = GameObject.Find("Score Manager").GetComponent<ScoreManager>();  
 
-        //Updates the high score
-        if(ScoreManagerObject.GetDeliveriesMade() > HighScore){
-            //Sets the new high score to set it as the high score
-            HighScore = ScoreManagerObject.GetDeliveriesMade();
-            //Sets the playerprefs highscore to the new high score
-            PlayerPrefs.SetInt("HighScore", HighScore);
+        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("GameOver Scene")){
+            //Updates the high score
+            if(ScoreManagerObject.GetDeliveriesMade() > HighScore){
+                //Sets the new high score to set it as the high score
+                HighScore = ScoreManagerObject.GetDeliveriesMade();
+                //Sets the playerprefs highscore to the new high score
+                PlayerPrefs.SetInt("HighScore", HighScore);
+
+            }
+
+            ScoreText.text = "Score: " + ScoreManagerObject.GetDeliveriesMade() + "\nHighScore: " + HighScore;
 
         }
-
-        ScoreText.text = "Score: " + ScoreManagerObject.GetDeliveriesMade() + "\nHighScore: " + HighScore;
 
     }
 }

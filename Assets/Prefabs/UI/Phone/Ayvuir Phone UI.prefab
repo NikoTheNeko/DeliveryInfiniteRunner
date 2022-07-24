@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4650824203283885721}
   - component: {fileID: 4002838027481186999}
   m_Layer: 5
-  m_Name: Ying Phone UI
+  m_Name: Ayvuir Phone UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 78a8127df60cfb84eaac7ffa4f6f39e8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 790527aae7e2e3147a29487bc665eb01, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

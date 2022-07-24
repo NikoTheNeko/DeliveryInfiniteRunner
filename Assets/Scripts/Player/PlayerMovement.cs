@@ -63,7 +63,10 @@ public class PlayerMovement : MonoBehaviour{
     [Tooltip("This is allows the player to jump")]
     [SerializeField]private bool CanJump = true;
     [SerializeField]private bool CanSlide = true;
-    
+    [SerializeField]private bool Grounded = true;
+
+    [SerializeField]private bool MobileHardDropBool = false;
+
     #endregion
 
     // Start is called before the first frame update
@@ -94,6 +97,7 @@ public class PlayerMovement : MonoBehaviour{
         JumpCheck();
         HardDrop();
         SlidingManager();
+        MobileHardDropHelper();
     }
 
     /**
@@ -111,6 +115,8 @@ public class PlayerMovement : MonoBehaviour{
     private void JumpCheck(){
         //Checks if you can jump and if you pressed the jump button
         if(CanJump && Input.GetButtonDown("Jump")){
+            //No longer grounded you are in the sky nyoom
+            Grounded = false;
             //Creates a jump vector to shoot the player up and adds it as a force
             Vector2 JumpVector = new Vector2(0, JumpForce);
             PlayerRigidbody.AddForce(JumpVector);
@@ -131,6 +137,7 @@ public class PlayerMovement : MonoBehaviour{
         if(CollidedObject.gameObject.CompareTag("Ground")){
             CanJump = true;
             CanSlide = true;
+            Grounded = true;
         }
 
         //If you run into an object, play the object's particle system. Then kill it.
@@ -163,6 +170,13 @@ public class PlayerMovement : MonoBehaviour{
         if(Input.GetButton("Slide") && !CanSlide){
             Vector2 HardDropVector = new Vector2(0, -HardDropForce);
             PlayerRigidbody.AddForce(HardDropVector);
+        }
+    }
+
+    public void Unstuck(){
+        if(CanJump == false && CanSlide == false && Grounded == true){
+            CanSlide = true;
+            CanJump = true;
         }
     }
 
@@ -223,6 +237,78 @@ public class PlayerMovement : MonoBehaviour{
     public void StopTheGame(){
         StopPlayer = true;
         PlayerSpeed = 0;
+    }
+
+
+    #endregion
+
+    #region Mobile Functions
+    
+    /**
+        Jump Function but for mobile
+    **/ 
+    public void MobileJump(){
+        //Checks if you can jump and if you pressed the jump button
+        if(CanJump){
+            //No longer grounded you are in the sky nyoom
+            Grounded = false;
+            //Creates a jump vector to shoot the player up and adds it as a force
+            Vector2 JumpVector = new Vector2(0, JumpForce);
+            PlayerRigidbody.AddForce(JumpVector);
+            //Disables jump (you are in the air nyoom)
+            CanJump = false;
+            //You are no longer on the ground, be free my child: Marks can slide to false
+            //The joke here is that the previous variable was "IsGrounded" but past Niko
+            //Decided to make a thing in advanced but here we are
+            CanSlide = false;
+            //Plays the jump noice
+            JumpSFX.Play();
+        }
+    }
+
+    /**
+        Mobile slide
+        This does a couple of things, it'll make sure that the player is sliding and also swap sprites if they are.
+        I guess it'd be better to put this into 2 different functions but whatever
+    **/
+    public void MobileSlideDown(){
+        //If the player is grounded and holding the slide button, then swap sprites
+        if(CanSlide){
+            SlidingObject.SetActive(true);
+            StandingObject.SetActive(false);
+        }
+    }
+
+    /**
+        Mobile version when you let go
+    **/
+
+    public void MobileSlideUp(){
+        //If the player lets go of slide or is now in the air, then swap sprites.
+        SlidingObject.SetActive(false);
+        StandingObject.SetActive(true);
+        MobileHardDropBool = false;
+    }
+
+    /**
+        If the player is in the air they slamma jamma on the floor
+    **/
+    public void MobileHardDrop(){
+        //Checks if the player is holding the slide button and is in the air by checking if it can slide
+        if(!CanSlide){
+            MobileHardDropBool = true;
+        } else if(CanSlide){
+            MobileHardDropBool = false;
+        }
+
+    }
+
+    private void MobileHardDropHelper(){
+        //If the hard drop is activated then go
+        if(MobileHardDropBool){
+            Vector2 HardDropVector = new Vector2(0, -HardDropForce);
+            PlayerRigidbody.AddForce(HardDropVector);
+        }
     }
 
 

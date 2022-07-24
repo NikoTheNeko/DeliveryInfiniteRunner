@@ -108,7 +108,8 @@ public class TimerScript : MonoBehaviour{
     #region Public Functions
 
     public void ResetTimer(){
-        TimerTime = MaxDeliveryTime;
+        if(TimerTime > 0)
+            TimerTime = MaxDeliveryTime;
     }
     
     #endregion
